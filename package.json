@@ -1,0 +1,5 @@
+{
+  "name": "yoru-radio", "version": "0.1.0", "private": true, "type": "module",
+  "scripts": {"dev": "node scripts/serve.mjs", "start": "node scripts/serve.mjs", "prepare:assets": "node scripts/assets.mjs", "test": "node --test", "check": "node --check app.js"},
+  "engines": {"node": ">=20"}
+}

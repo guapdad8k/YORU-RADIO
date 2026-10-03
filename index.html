@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#151714">
+  <meta name="description" content="YORU — osobiste radio internetowe. Wybierz klimat, znajdź swoją częstotliwość.">
+  <title>YORU RADIO — znajdź swoją częstotliwość</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#channels">Przejdź do kanałów</a>
+<div class="site-shell">
+  <header class="site-header">
+    <a href="#" class="wordmark" aria-label="Yoru Radio — strona główna">YORU<span>®</span><small>INTERNET RADIO CLUB</small></a>
+    <nav aria-label="Nawigacja"><a href="#channels" class="nav-active">01 / RADIO</a><a href="#about">02 / O STACJI</a><button id="edit-top">03 / TWOJE PLAYLISTY ↗</button></nav>
+    <div class="time-block"><span>WARSZAWA <time id="clock">--:--:--</time></span><small>夜のラジオ / NIGHT RADIO</small></div>
+  </header>
+  <div class="ticker"><span class="tiny-dot"></span><span>OSOBISTA SELEKCJA. WSPÓLNA CZĘSTOTLIWOŚĆ.</span><span class="ticker-middle">音楽でつながる — CONNECT THROUGH MUSIC</span><span>VOL. 001 <span class="star">✳</span> EST. 2026</span></div>
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy"><div class="eyebrow"><span class="cross">+</span> NIEZALEŻNE RADIO INTERNETOWE</div><h1 id="hero-title">Dobre dźwięki.<br><em>Po Twojemu.</em></h1><p>Bez pośpiechu. Bez przypadkowych wyborów.<br>Wybierz klimat i zostań na chwilę.</p><a class="hero-link" href="#channels">ZNAJDŹ SWOJĄ CZĘSTOTLIWOŚĆ <span>↘</span></a></div>
+      <div class="hero-art" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit orbit-three"></div><div class="chrome-mark">夜</div><span class="art-coordinate">35°40′ N / 139°45′ E</span><span class="art-label">AFTER HOURS<br>BEFORE EVERYTHING.</span><span class="art-star">✳</span><span class="art-tag">Y.R.C / 音楽</span></div>
+      <div class="hero-bottom"><span>FROM MY ROOM TO YOURS.</span><span>SCROLL TO TUNE IN ↓</span></div>
+    </section>
+    <section id="channels" class="radio-section" aria-labelledby="channels-title">
+      <div class="section-heading"><div><span class="eyebrow">01 / WYBIERZ KANAŁ</span><h2 id="channels-title">Na jakiej fali jesteś?</h2></div><span class="section-note">4 KLIMATY / 5 CZĘSTOTLIWOŚCI<br>WYBÓR NALEŻY DO CIEBIE.</span></div>
+      <div class="radio-layout">
+        <aside class="channel-menu"><div class="panel-label">FREQUENCY SELECT <span>▼</span></div><div id="channel-buttons" class="channel-buttons" role="group" aria-label="Kanały radia"></div><div class="menu-foot"><span>STEREO / SPOTIFY</span><span class="menu-symbol">↗</span><p>Małe radio.<br>Dużo dobrych rzeczy.</p></div></aside>
+        <div class="receiver"><div class="receiver-top"><span>YORU RECEIVER / YR–001</span><span>● <span id="receiver-state">GOTOWY DO ODSŁUCHU</span></span></div><div class="receiver-screen" id="receiver-screen"><div class="screen-top"><span id="channel-code">CH. 01 / RELAX</span><span>STEREO</span></div><div class="frequency-art" aria-hidden="true"><div class="wave-line"></div><div class="wave-line second"></div><div class="wave-line third"></div><div class="wave-dot"></div></div><div class="screen-title"><div><span id="channel-jp" lang="ja">静かな時間</span><h3 id="channel-title">Spokojny</h3></div><span class="screen-frequency" id="frequency">88.1<small>MOOD FM</small></span></div><div class="frequency-scale" aria-hidden="true"><span>88</span><span>92</span><span>96</span><span>100</span><span>104</span><span>108</span><i id="tuning-needle"></i></div></div><div class="receiver-info"><p id="channel-description"></p><span class="demo-badge" id="playlist-badge">PLAYLISTA DEMONSTRACYJNA</span></div><div class="receiver-controls"><button class="listen-button" id="listen"><span>▶</span> WŁĄCZ ODSŁUCH</button><button class="icon-button" id="next" aria-label="Następny kanał">↠</button><button class="save-button" id="favorite" aria-pressed="false"><span>♡</span> ZAPISZ KANAŁ</button></div><div id="spotify-area" hidden><div class="embed-heading"><span>ODTWARZACZ SPOTIFY</span><button id="close-player" aria-label="Zamknij odtwarzacz">ZAMKNIJ ×</button></div><div id="embed-container"></div><p class="embed-help">Naciśnij ▶ w odtwarzaczu Spotify. Zakres odsłuchu zależy od konta i dostępności playlisty. <a id="spotify-link" target="_blank" rel="noopener noreferrer">Otwórz w Spotify ↗</a></p></div></div>
+        <aside class="curator-card"><div class="panel-label">A NOTE FROM THE SELECTOR <span>↗</span></div><div class="tape-art" aria-hidden="true"><div class="tape-label"><span>YORU MIXTAPES</span><strong>SIDE A</strong><small>GOOD MUSIC / NO RULES</small></div><div class="tape-reels"><i></i><b>∞</b><i></i></div><div class="tape-bottom"></div></div><span class="eyebrow">HUMAN SELECTED.</span><h3>Ktoś tego<br>naprawdę słuchał.</h3><p>Docelowo znajdziesz tu moje własne playlisty. Na start: pięć przykładowych selekcji i miejsce na Twoje.</p><button id="edit-curator" class="text-button">PODŁĄCZ SWOJE PLAYLISTY ↗</button><div class="curator-sign">JAY BLAZE <span>✳</span></div></aside>
+      </div>
+      <div class="now-strip"><span class="tiny-dot"></span><span id="selection-status" role="status">WYBRANY KANAŁ: SPOKOJNY</span><span id="saved-status">TWÓJ MAŁY KĄCIK INTERNETU.</span><button id="motion-toggle" aria-pressed="false">ANIMACJE: ON</button></div>
+    </section>
+    <section id="about" class="about"><span class="eyebrow">02 / O STACJI</span><div><h2>Internet był kiedyś<br><em>bardziej osobisty.</em></h2><p>To radio jest małym powrotem do tamtego czasu. Do własnych stron, nocnego klikania i muzyki polecanej przez ludzi. Japoński web z lat 2000, trochę chromu, trochę szumu. I Twoje playlisty w samym środku.</p><span class="web-badges"><b>NO ALGORITHM CLUB</b><b>BEST VIEWED WITH EARS</b><b>音楽愛好家</b></span></div><div class="about-stamp" aria-hidden="true">YORU<br><span>RADIO CLUB</span><small>夜 • 001</small></div></section>
+  </main>
+  <footer><span>© 2026 YORU RADIO CLUB</span><span>MADE FOR LATE NIGHTS & GOOD COMPANY.</span><a href="https://github.com/guapdad8k/WEB-PORTFOLIO" target="_blank" rel="noopener noreferrer">INSPIRED BY WEB-PORTFOLIO ↗</a><span>PROTOTYPE / V.01</span></footer>
+</div>
+<dialog id="editor" aria-labelledby="editor-title"><form id="playlist-form"><div class="dialog-heading"><span class="eyebrow">SELECTOR'S DESK / V.01</span><button type="button" id="close-editor" aria-label="Zamknij edytor">×</button></div><h2 id="editor-title">Twoje playlisty.<br>Twoje radio.</h2><p>Wklej publiczne linki Spotify. Puste pola przywracają przykładowe playlisty. Zmiany zapisują się w tej przeglądarce; eksport pozwala przenieść selekcję do innego urządzenia.</p><div id="playlist-fields"></div><p id="form-error" role="alert"></p><div class="dialog-actions"><button type="submit" class="listen-button">ZAPISZ SELEKCJĘ ↗</button><button type="button" id="export" class="text-button">EKSPORT JSON ↓</button><label class="text-button import-label">IMPORT JSON ↑<input type="file" id="import" accept="application/json,.json"></label></div></form></dialog>
+<script type="module" src="app.js"></script>
+</body></html>

@@ -1,0 +1,7 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';
+import {channels,parsePlaylist,validateSelections} from '../config.js';
+const id='37i9dQZF1DX4sWSpwq3LiO';
+test('accepts official playlist URLs, share queries, URIs and IDs',()=>{for(const link of [id,`spotify:playlist:${id}`,`https://open.spotify.com/playlist/${id}?si=abc`,`https://open.spotify.com/intl-pl/playlist/${id}`,`https://open.spotify.com/embed/playlist/${id}`])assert.equal(parsePlaylist(link),id);assert.equal(parsePlaylist(' '),null);});
+test('rejects unexpected hosts, protocols, credentials, IDs and track links',()=>{for(const link of [`http://open.spotify.com/playlist/${id}`,`https://open.spotify.com.evil.test/playlist/${id}`,`https://user@open.spotify.com/playlist/${id}`,`https://open.spotify.com/track/${id}`,'javascript:alert(1)','<script>','https://open.spotify.com/playlist/short',123])assert.throws(()=>parsePlaylist(link));});
+test('import produces only valid known channel IDs',()=>{assert.deepEqual(validateSelections({calm:id,untrusted:'anything'}),{calm:id});assert.throws(()=>validateSelections({calm:'invalid'}));assert.throws(()=>validateSelections([]));assert.throws(()=>validateSelections(null));});
+test('five unique channels include both rap variants and valid demo playlist IDs',()=>{assert.equal(new Set(channels.map(c=>c.id)).size,5);assert.deepEqual(channels.filter(c=>c.title==='Rap').map(c=>c.variant),['Nowoczesny','Oldschool']);channels.forEach(c=>assert.equal(parsePlaylist(c.playlistId),c.playlistId));});
